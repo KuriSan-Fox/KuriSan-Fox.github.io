@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>パッチノート：Undertale Engine 0.20 & 0.20vXX</title>
+        <meta charset="utf-8">
+        <style>
+            .updates{color:black;padding-left:100px;padding-top:50px;}
+            .updateBox{color:black;}
+            .updateTitle{color:red;padding-left:10px;font-size:40px;padding-top:120px;}
+            .updateDescription{color: black;padding-left:20px;font-size:22.5px;}
+            .h{color:red;font-size:25px;padding-top:22.5px;}
+        </style>
+    </head>
+    <body style="color: black; background-color: white;">
+        <a href="../list.html" style="color: blue;">戻る</a>
+        <div id="follower_to_nakayoku_shiro" style="font-size: 25px; text-align: center; padding-top: 25px;">パッチノート Undertale Engine</div><br><hr>
+
+        <div class=updates>
+            <div class=updateBox>
+                <div style=font-size:25px;>パッチノートは、更新が遅かったり、ゲームのリリース前に投稿されたり、ということがある可能性があります。<br>もしあまりにも遅すぎる場合、ウェブサイトをリロードしてみてください。</div>
+                
+                <div id=u_0_21_0>
+                    <div class=updateTitle>0.21.0</div>
+                    <div class=updateDescription>
+                        <div class=h>仕様変更</div>
+                        <br>・スプライトのレイヤーの整理方法を特大に変更しました。
+                        <br>・ゲーム停止時のアイコンを変更しました。
+                        <br>・名前のコメントテキストを適切なサイズに変更しました。
+                        <div class=h>修正</div>
+                        <br>・スプライトが多すぎると、スプライトのレイヤー整理に間違いが発生する問題を修正
+                        <br>・名前を選択したとき、名前が途中で消えるミスを修正
+                        <br>・ボックスが表示されないミスを修正
+                        <div class=h>その他</div>
+                        <br>・Undertale公式サイトは<a href="https://undertale.com/">こちら</a>からどうぞ。このUndertale Engineは非公式で、開発者さん/チーム/公式とは一切かかわっておりません！
+                    </div> <!--divのクラス「updateDescription」の最後-->
+                </div>
+
+                <div id=u_0_20_v12>
+                    <div class=updateTitle>0.20v11</div>
+                    <div class=updateDescription>
+                        <div class=h>修正</div>
+                        <br>・スプライトに誤って他人のスプライトのコスチューム画像がインポートされていたミスを修正しました。ごめんなさい！
+                        <div class=h>その他</div>
+                        <br>・Undertale公式サイトは<a href="https://undertale.com/">こちら</a>からどうぞ。このUndertale Engineは非公式で、開発者さん/チーム/公式とは一切かかわっておりません！
+                    </div> <!--divのクラス「updateDescription」の最後-->
+                </div>
+
+                <div id=u_0_20_v11>
+                    <div class=updateTitle>0.20v11</div>
+                    <div class=updateDescription>
+                        <div class=h>修正</div>
+                        <br>・バージョンタグのミスを修正しました。
+                        <div class=h>その他</div>
+                        <br>・Undertale公式サイトは<a href="https://undertale.com/">こちら</a>からどうぞ。このUndertale Engineは非公式で、開発者さん/チーム/公式とは一切かかわっておりません！
+                    </div> <!--divのクラス「updateDescription」の最後-->
+                </div>
+
+                <div id=u_0_20>
+                    <div class=updateTitle>0.20</div>
+                    <div class=updateDescription>
+                        <div class=h>仕様変更</div>
+                        <br>・スクロールエンジンが書き換えられました。以前のバージョンとは反対の方向へ移動することに注意してください。
+                        <br>　・この変更により、やっとマップのズームと傾きが実装されました。これでカメラシェイクとか作って遊べちゃいますね！
+                        <br>・スクロールが適切に更新されるようになりました。（注意：リアルタイム更新ではないことに注意してください。0.05秒に１度だったような気がします。これはデバイスの仕様です。全てのゲームが多分そうです）
+                        <br>・名前決定画面での名前テキストがより本家に近くなりました。今後進化する予定ですので、お楽しみに。
+                        <br>・プレイヤーのヒットボックスにわずかな変更が行われました。小さすぎる変更です。今までは<br><br>　もし＜＜＜壁 に触れた＞または＜端 に触れた＞＞または＜サブボックス に触れた＞＞なら<br>　　hit.down を [1] にする<br>　できなければ<br>　　hit.down を 0 にする<br><br>という風な複雑なコードでしたが、一気に改善されて<br><br>　hit.down を （＜＜＜壁 に触れた＞ または ＜端 に触れた＞＞または＜サブボックス に触れた＞＞を四捨五入）<br><br>に変更されました。trueは1.0を返し、falseは0.0を返します。<br>しかしこれはあくまで例なので、実際にヒットボックスのコードを確認してみることをお勧めします。
+                        <br>・プレイヤーの位置は「オブジェクト XY座標」で処理されるようになりました。オブジェクト XY座標は今までのプレイヤーのXY座標変数をコピーするので、オブジェクト XY変数は使用せず今まで通りプレイヤー XY座標を使用してください。
+                        <br>・変数の名前をほぼすべて変更しました。以前よりもわかりやすくなったと思います。
+                        <div class=h>修正</div>
+                        <br>・クレジットが時々表示されないバグを修正。
+                        <br>・イントロとタイトルメニューなどでプレイヤーがバックグラウンドで移動できるバグを修正。
+                        <br>・イントロとタイトルメニューなどでプレイヤーのゲームメニューを開くことができるバグを修正。
+                        <div class=h>追加</div>
+                        <br>・カメラの向きに「rotation z」を追加しました。rotation zよりもrotation xが正しかったかもしれません。
+                        <br>・カメラのズームを追加しました。
+                        <br>・コマンドのテストを追加しました。まだコマンドがありませんので、0.21で追加される予定です。
+                        <br>・カメラの動きIDを追加しました。
+                        <div class=h>削除</div>
+                        <br>・なし
+                        <div class=h>その他</div>
+                        <br>・0.20から発生したバグが複数見つかっていたのですが、私は気づきませんでした。急いで0.21の実装準備を行う予定です。<br>詳細は<a href=knownIssues_ute.html>基地の問題</a>を確認してください。（現在このページはコーディング中なので存在しません。）
+                        <br>・Undertale公式サイトは<a href="https://undertale.com/">こちら</a>からどうぞ。このUndertale Engineは非公式で、開発者さん/チーム/公式とは一切かかわっておりません！
+                    </div> <!--divのクラス「updateDescription」の最後-->
+                </div>
+            </div> <!--divのクラス「updateBox」の最後-->
+        </div> <!--divのクラス「updates」の最後-->
+    
+        <br>
+    </div>
+    <div id="iroiro" style="padding-top: 120px; font-size:20px; text-align: left;"><span style="color: red;">// --- 記載者 --- //</span>
+        <br>記載者：記載者名（<a href="" style="color: blue;">記載者ID</a>）
+    </div>
+    </body>
+</html>

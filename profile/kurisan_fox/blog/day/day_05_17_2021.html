@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>＜タイトル＞</title>
+        <meta charset="utf-8">
+    </head>
+    <body style="color: black; background-color: white;">
+        <a href="list.html" style="color: blue;">戻る</a>
+        <div id="follower_to_nakayoku_shiro" style="font-size: 25px; text-align: center; padding-top: 25px;">プレイヤーアニメーションの書き換え方について</div><br><hr>
+        <div id="follower_t0_nakayoku_shiro" style="font-size: 18.4px; text-align: left; padding-left: 400px; padding-top: 50px;">お久しぶりです、栗です。。。。
+<br>今回は、Minecraft: Bedrock Editionで<span style=color:blue;>プレイヤーアニメーション</span>の書き換え方を簡単に説明したいと思いますよん。。。。。
+<br>まず、<span style=color:red;>「プレイヤーアニメーションってなんぞや？」</span>って思うでしょう。
+<br>Minecraft: Bedrock Editionにはさまざまな「プレイヤーアニメーション」が存在します。
+<br>例えば、<span style=color:red;>殴るときの手の動き方</span>ですかね。。。。
+<br>一回上に移動させ、徐々に元の位置に戻していく動き、それが<span style=color:red;>プレイヤーアニメーション</span>です。
+<br>実はこれ、一つの「bone」に１行でコードが書かれているんですよね。
+<br>すごいですよね（）
+<br>どうやってそれらを書いていくのか、そもそもboneって？っていうのも色々書いていきたいと思います。
+<br>ただし、容量の限度の都合上、画像や動画はありません。
+<br>マイクラ持ってれば自分でできると思うんで、自分でやってみてくださいな。
+<br><br><span style=color:red;>・アニメーションを作る下準備とは？</span>
+<br>リソースパックを作ります。
+<br>これ意外に面倒くさいです。
+<br>まず、Minecraftのフォルダを探さなければなりませんね、、、、、、。
+<br>Androidの場合、<span style=color:blue;>ローカルストレージ/games/com.mojang/resource_packs</span>、
+<br>Windows10の場合、<span style=color:blue;>C:\Users\＜ユーザー名＞\AppData\Local\Packages\Microsoft.MinecraftUWP_8wekyb3d8bbwe\LocalState\games\com.mojang\resource_packs</span>
+<br>を開いてください。
+<br>そこの中に、お好みの名前でフォルダを作成してください。
+<br>そしたら、そのフォルダの中に「<span>manifest.json</span>」という名前のファイルを作成してください。
+<br>そしたら、下の文章をコピペしてください。
+<div style=background-color:rgb(78,78,78);color:white;padding-left:20px;>{
+<br><span style=padding-left:20px;></span>"format_version": 1,
+<br><span style=padding-left:20px;>"header": {
+<br><span style=padding-left:40px;>"description": "アニメーション練習パックです。頑張って作ってみましたよん、、＾＾；",
+<br><span style=padding-left:40px;>"name": "プレイヤーアニメーション練習リソパ",
+<br><span style=padding-left:40px;>"uuid": "187cdb20-4e38-4c3b-9803-14dd44f02977",
+<br><span style=padding-left:40px;>"version": [0, 0, 0],
+<br><span style=padding-left:40px;>"min_engine_version": [1, 13, 0]
+<br><span style=padding-left:20px;>},
+<br><span style=padding-left:20px;>"modules": [
+<br><span style=padding-left:40px;>{
+<br><span style=padding-left:60px;>"description": "リソースパックの二次配布しないでね！！＾＾",
+<br><span style=padding-left:60px;>"type": "resources",
+<br><span style=padding-left:60px;>"uuid": "ff958228-b319-431f-9d60-858147415cc8",
+<br><span style=padding-left:60px;>"version": [0, 0, 0]
+<br><span style=padding-left:40px;>}
+<br><span style=padding-left:20px;>]
+<br>}
+</div>
+<br>オブジェクト「description」には、お好みのパックの説明を入力してください。なんか翻訳キーも使えるらしいですよ。例として、「アニメーション練習パックです。頑張って作ってみましたよん、、＾＾；」にしてます。
+<br>オブジェクト「name」には、お好みの名前を入力してください。例として、「プレイヤーアニメーション練習リソパ」にしてます。
+<br>オブジェクト「uuid」には、決まったUUIDを使用してください。v1とv4は動作確認してます。UUIDを作れるサイトとして、「<a href="https://www.uuidgenerator.net/version4">UUID Generator</a>」を紹介します。
+<br>オブジェクト「version」には、お好みのバージョンを記入してください。例えば、1.14.514にしたい場合、「0, 0, 0」になっているところを、「1, 14, 514」にする必要があります。betaとかは多分入れれないと思います。。。。そういうのはとりまnameに入れましょう。
+<br>オブジェクト「min_engine_version」は、Minecraftで実行できる最低のバージョンを記入してください。例えば、1.13.0の場合、[1, 13, 0]を記入してください。
+<br>次に、modulesについてです。
+<br>こっちはよくわかってませんが、必須？っぽいです。愈略したことないのでわかりませんけど、、、
+<br>オブジェクト「description」には、とりあえずコメントっぽいの入れときましょう。サンプルとして、「リソースパックの二次配布しないでね！！＾＾」を入れてます。
+<br>オブジェクト「type」は必須です！！！絶対入れてください！！！！リソースパックの場合はresourcesを入れてください。今回はリソースパックなので、resourcesです。
+<br>オブジェクト「uuid」には、また別のUUID入れてください。同じやつ使えるかどうかは、試したことはあるけど記憶にないので、今後再確認して以降に記入します。
+<br>オブジェクト「version」には、よくわからないので、headerと同じversio入れておきましょう。
+<br><br>お疲れ様です、これでリソースパックの下準備終わりました。
+<br>次に、リソースパックの機能、今回はアニメーション関連なので、アニメーション関連のフォルダーとファイルを置いていきたいと思います。
+<br><br>まず、フォルダーを複数作ります。
+<br>必要な物のみにしてみますかね、、、。
+<br>「animations」、「animation_controllers」、「entity」は必須です（ただしanimation_controllersとentityはカスタムアニメーションIDを作成する場合のみに使います）。
+<br>「animations」フォルダーの中に、「player.animation.json」を作ってください。
+<br>位置から書くのは面倒だし、まずは改造から手を加えたほうがいいかなと思うので、バニラコードをペーストしておきましょう。
+<br>まぁ作らなくてもよかったじゃん！！！ってなるかもしれませんが、バニラコードが入ってるバニラリソパを公式方法でダウンロードしてください。
+<br>ダウンロードしたら、zipファイルを解凍し、中身のanimations -> player.animation.jsonと、animation_controllers -> player.animation_controller.jsonと、entity -> player.entity.jsonをコピペしておきましょう。
+<br>それぞれ適切な位置にファイルを配置してください。つまり、
+<br>player.animation.json -> （作ったリソパの）animationsフォルダの中
+<br>player.animation_controller.json -> （作ったリソパの）animation_controllersフォルダの中
+<br>player.entity.json -> （作ったリソパの）player.entity.jsonフォルダの中。
+<br>まずは、player.animation.jsonを開きましょう。
+<br>いっぱいぶわーって出てくると思います。。。
+<br>なので、まずは「animation.player.bob」を改造しましょう。
+<br>デフォルトは、
+<br><div style=background-color:rgb(78,78,78);color:white;padding-left:20px>
+"animation.player.bob":{
+<br><span style=padding-left:20px;>"loop":true,
+<br><span style=padding-left:20px;>"bones":{
+<br><span style=padding-left:40px;>"leftarm":{"rotation":[0.0,0.0,"-((math.cos(query.life_time*103.13244)*2.865)+2.865)"]},
+<br><span style=padding-left:40px;>"rightarm":{"rotation":[0.0,0.0,"(math.cos(query.life_time*103.13244)*2.865)+2.865"]},
+<br><span style=padding-left:20px;>}
+<br>},
+</div>
+<br>ってなってます。
+<br>なんぞやこれ？って思うかもしれません。
+<br>まず、「animation.player.bob」は「手が揺れるアニメーションのコードのID」となります。
+<br>で、"loop":true,ってなってる部分は、ループするかどうかってなってます。
+<br>これはtrue推奨です。
+<br>そんで、bonesはモデルのオブジェクト？見たいなやつです。
+<br>基本的に、rightArm、leftArm、rightLeg、leftLeg、head、body、rightItem、leftItemしか使いません。
+<br><br>bonesのこれはどこにつながっているのか？について。。。
+<br>まず、簡単にリスト表示してみます。
+<br>rightArm = 結構使うと思う。右手。
+<br>leftArm = 左手。
+<br>rightLeg = 右足。
+<br>leftLeg = 左足。
+<br>head = 頭。
+<br>body = 胴体。
+<br>rightItem = 右手に持ってるアイテム。
+<br>leftItem = 左手に持ってるアイテム。
+<br>root = 全体。
+<br><br>となっております。
+<br>そして、一部のboneは他のboneの位置と向きに影響してしまうことがあります。
+<br>例えば、bodyを45.0度にしてスマブラとかいうゴミくそ任天堂が作ったゴミスニークポーズにすると、手と頭までそのbodyと同じ向きになってしまうわけですね。
+<br>位置も勝手に変わるけど、それのようなコード見当たりませんよね？書いた覚えありませんよね？
+<br>そういう感じです。
+<br><br>そんで、このrotationって何？と思われるかもしれません。
+<br>文字通り、向きです。
+<br>[x,y,z]という形になっていて、
+<br>xは上か下か、つまり上下。数字が低いほど上を向き、数字が高いほど下を向きます。例えば、22.5にしたら22.5度後ろに下がる感じ。
+<br>yは左右。こっちは正直どっちがどっちなのかわかってません、、、すみません＾＾；
+<br>zは、、、なんていうんだろう、、、傾き？です。45.0にすると斜めになります。xの90度向けた時みたいな感じで覚えてください。
+<br><br>ココのコードには、positionの説明がありませんが、positionの説明もしておきます。
+<br>positionは文字通り位置を指します。
+<br>書き方は「"position": [x, y, z]」となっております。
+<br>xyz座標はマイクラやってる人全員わかるはずですが、一応説明しておきますかね。。。
+<br>xは左右。数字が高いほど右へ行きます。
+<br>yは上下。数字が高いほど上へ行きます。
+<br>zは前後。数字が高いほど奥へ行きます。
+<br><br>scaleもないですので、ここに書いておきますね。
+<br>私はあまり使いませんけど、時々使いますので覚えておくとまぁまぁ便利でしょう＾＾；
+<br>scaleの書き方は「"scale": [x, y, z]」となっているのですが、、、、、
+<br>いまいちどういう使い方なのかわかってませんね。。。。
+<br>とりあえず、「"scale": [0.5, 0.5, 0.5]」っていう感じで全部同じ数字にすると0.5倍のサイズになるってことくらいしかわかってないです。。。。。。
+<br><br>math.cosって何？
+<br>math.cosだけではなくすべてのMoLangの書き方でも書いておきますかね。
+<br>まず、math.cosはそのまま数学のCOSです。馬鹿なのであまり理解できてません、、、すみません＾＾；
+<br>math.関連はほかにもあります。
+<br>powとか、sqrtとか、roundとか、sinとか。
+<br>結構sqrt、sin、cosを使います。
+<br>query.life_timeとは、そのエンティティの存在した時間をカウントしています。
+<br>秒数なので、始まりは0.0、永遠に続く数字です。
+<br>多分0.05秒進んでいくんだと思います。FPSに影響して遅かったり早かったりすると思いますが。
+<br>query.はいっぱいあります。
+<br>かなり多いので、MoLangドキュメント見るのをお勧めします。。。。
+<br>かなり使うのが、
+<br>life_time = さっきのやつ。エンティティの存在する時間を秒数でカウントする。
+<br>is_sneaking = スニークしているかどうか。
+<br>is_in_water = 水に入っているか。
+<br>is_on_fire = 燃えているか。
+<br>is_baby = エンティティが赤ちゃんかどうか（プレイヤーでは使えないと思います）。
+<br>target_x_rotation = プレイヤーの向いてる上下方向。ちなみに多少のバグが存在するようで、少し遅れることがあります。。。
+<br>target_y_rotation = プレイヤーの向いてる左右方向から体の左右方向を引いた数。
+<br>body_x_rotation = 意味わかんない。多分向いてる高さ。
+<br>body_y_rotation = 体の左右方向。
+<br>is_in_ui = UIの中にいるかどうか。
+<br>is_on_ground = 地面に立っているか。
+<br>get_equipped_item_name = アイテムを所持しているか銅か
+<br>などいっぱいあります。
+<br>そして、ほぼ全てのエンティティで使える変数が、
+<br>attack_time = 攻撃秒数
+<br>、プレイヤーにのみ使える（と思われるもの）は、
+<br>swim_amount = 泳いでいるかどうか。滑らかに進む。
+<br>bob_animation = 画面の揺れトグルオプションが有効であるかどうか。
+<br>
+    </div>
+    <div id="iroiro" style="padding-top: 120px; font-size:20px; text-align: left;"><span style="color: red;">// --- 記載者 --- //</span>
+<br>記載者：栗君（<a href="https://twitter.com/KuriSan_Fox" style="color: blue;">@KuriSan_Fox</a>）
+<br>作成日：2021/05/06 17:53（UTC +0）
+<br>更新日：2021/05/06 17:53 （UTC +0）<br>
+<br> <span style="color: blue;">// --- 更新内容 --- //</span><br>
+    </div>
+    </body>
+</html>

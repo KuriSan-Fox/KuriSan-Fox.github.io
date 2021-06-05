@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>パッチノート：Undertale Engine 0.20 & 0.20vXX</title>
+        <title>パッチノート：Undertale Engine</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="../../../../assets/style/css/blog.css">
     </head>
@@ -13,8 +13,50 @@
             <div class=updateBox>
                 <div style=font-size:25px;>パッチノートは、更新が遅かったり、ゲームのリリース前に投稿されたり、ということがある可能性があります。<br>もしあまりにも遅すぎる場合、ウェブサイトをリロードしてみてください。</div>
                 
+                <!--アルファ版！！！！-->
+
+                <div id=u_0_21_2>
+                    <div class=updateTitle>0.21.2「Wolf - Hot 'Fox'」</div>
+                    <div class=updateDescription>
+                        <div class=h>0.21.2</div>
+                        <br>・バトル中にダメージを受けるといくつかのスプライトの位置がボブした後にずれたままになる可能性のある不具合を修正
+                        <br>・Xキーを押した状態で魂を操作すると移動先の向きが上下逆転してしまう致命的なバグの修正
+                        <br>・can_use_falcoをfalseまたは0にしたとき、いくつかのゲームのステータスを書き換えるコマンドの利用を無効にするようにした。
+                        <br>　・ファルコが無効になると使えなくなる：data、teleport、item、unixtime、battle。
+                        <br>　　・ファルコはこのゲームで勝手に読んでるデバッグのことで、実際に存在する単語でもスラングでもないです。
+                        <br>・デバッグコンソールに「save」コマンドを追加した。
+                        <br>　・使い方：save game - これだけで保存されます。
+                        <br>・デバッグコンソールに「load」コマンドを追加した。
+                        <br>　・使い方：load savecode ＜セーブコード＞ ＜フォーマットバージョン＞
+                        <br>　・フォーマットバージョンは現在は1です。
+                        <br>・「battle」コマンドを追加した。
+                        <br>　・can_use_falcoがfalse、または0に設定されている場合、使用できません。
+                        <br>　・説明はゲーム内で確認したほうがわかりやすいと思います。
+                    </div> <!--divのクラス「updateDescription」の最後-->
+                </div>
+
+                <div id=u_0_21_1>
+                    <div class=updateTitle>0.21.1「Wolf」 - 06/05/2021 12:15</div>
+                    <div class=updateDescription>
+                        <div class=h>0.21.1</div>
+                        <br>・サムネイル変えました。
+                        <br>・スプライトの動きがFPSに影響する可能性のあるバグを一部スプライトで改善しました。
+                        <br>　・Friskがゲームのラグで移動速度に影響するのを修正。
+                        <br>　・フォントの表示速度が加速化しました。ゲームのラグで遅くなりすぎる問題が改善。
+                        <br>　・その他ゲームのラグを改善。
+                        <br>・コマンドを多分ちょっと増やしました。/helpで確認できます。
+                        <br>・名前を「falco」にすると強制デバッグモードになるようになりました。
+                        <br>　・スクラッチキャットが描かれているスプライトの変数を直接いじって変える内部コンフィグみたいなので有効化したり無効化できます。
+                        <br>　・完成した作品をデバッグモードで不正行動されるのを防ぎます。
+                        <br>　・can_use_falcoをfalse、または0にしてもI + Eでデバッグ情報は引き続き閲覧可能です。
+                        <br>・長らく放置されていたオープニングのテキストの改行ミスを改善しました。
+                        <br>・翻訳の読み込みを無理やり加速させました。パフォーマンスに影響ないんですよ？！
+                        <br>・セーブポイントを何個設置しても同じコスチュームになるようにし
+                    </div> <!--divのクラス「updateDescription」の最後-->
+                </div>
+
                 <div id=u_0_21_0>
-                    <div class=updateTitle>0.21.0</div>
+                    <div class=updateTitle>0.21.1「Fox」 - 06/05/2021 04:21</div>
                     <div class=updateDescription>
                         <div class=h>仕様変更</div>
                         <br>・スプライトのレイヤーの整理方法を特大に変更しました。
@@ -30,7 +72,7 @@
                 </div>
 
                 <div id=u_0_20_v12>
-                    <div class=updateTitle>0.20v11</div>
+                    <div class=updateTitle>0.20v12 - 04/09/2021 06:53</div>
                     <div class=updateDescription>
                         <div class=h>修正</div>
                         <br>・スプライトに誤って他人のスプライトのコスチューム画像がインポートされていたミスを修正しました。ごめんなさい！
@@ -40,7 +82,7 @@
                 </div>
 
                 <div id=u_0_20_v11>
-                    <div class=updateTitle>0.20v11</div>
+                    <div class=updateTitle>0.20v11 - 04/08/2021 13:28</div>
                     <div class=updateDescription>
                         <div class=h>修正</div>
                         <br>・バージョンタグのミスを修正しました。
@@ -50,7 +92,7 @@
                 </div>
 
                 <div id=u_0_20>
-                    <div class=updateTitle>0.20</div>
+                    <div class=updateTitle>0.20 - 04/08/2021 13:26</div>
                     <div class=updateDescription>
                         <div class=h>仕様変更</div>
                         <br>・スクロールエンジンが書き換えられました。以前のバージョンとは反対の方向へ移動することに注意してください。
@@ -74,6 +116,33 @@
                         <div class=h>その他</div>
                         <br>・0.20から発生したバグが複数見つかっていたのですが、私は気づきませんでした。急いで0.21の実装準備を行う予定です。<br>詳細は<a href=knownIssues_ute.html>基地の問題</a>を確認してください。（現在このページはコーディング中なので存在しません。）
                         <br>・Undertale公式サイトは<a href="https://undertale.com/">こちら</a>からどうぞ。このUndertale Engineは非公式で、開発者さん/チーム/公式とは一切かかわっておりません！
+                    </div> <!--divのクラス「updateDescription」の最後-->
+                </div>
+
+                <div id=u_0_10>
+                    <div class=updateTitle>0.10 - (12/15/2020 22:49)</div>
+                    <div class=updateDescription>
+                        <div class=h>0.10</div>
+                        <br>・PHONEの追加準備
+                        <br>・メニューのDROPに機能追加
+                        <br>・[press z or enter key]の次から真っ暗になるバグの修正
+                        <br>・サムネ的なそれの変更
+                    </div> <!--divのクラス「updateDescription」の最後-->
+                </div>
+
+                <div id=u_0_02>
+                    <div class=updateTitle>0.02 - (12/08/2020 19:47)</div>
+                    <div class=updateDescription>
+                        <div class=h>0.02</div>
+                        <br>1.ロゴの致命的なミスを修正しました。
+                    </div> <!--divのクラス「updateDescription」の最後-->
+                </div>
+
+                <div id=u_0_01>
+                    <div class=updateTitle>0.01 - (12/06/2020 04:07)</div>
+                    <div class=updateDescription>
+                        <div class=h>0.01</div>
+                        <br>1.サムネかアイコンか知らんけど追加しました。
                     </div> <!--divのクラス「updateDescription」の最後-->
                 </div>
             </div> <!--divのクラス「updateBox」の最後-->

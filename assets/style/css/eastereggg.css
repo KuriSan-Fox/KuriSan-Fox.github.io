@@ -1,4 +1,10 @@
 .body{
+    /* 古い裏サイトみたいな雰囲気を出します。こういうの結構好きです。実際に入りたくはないですが。 */
     color:red;
     background-color: black;
+}
+.link{
+    color:red;
+    /* URLのした線を消します。 */
+    text-decoration: none;
 }

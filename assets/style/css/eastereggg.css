@@ -7,4 +7,6 @@
     color:red;
     /* URLのした線を消します。 */
     text-decoration: none;
+    text-transform: none;
+    text-shadow: none;
 }

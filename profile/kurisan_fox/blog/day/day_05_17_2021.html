@@ -29,22 +29,22 @@
 <br>そしたら、そのフォルダの中に「<span>manifest.json</span>」という名前のファイルを作成してください。
 <br>そしたら、下の文章をコピペしてください。
 <div style=background-color:rgb(78,78,78);color:white;padding-left:20px;>{
-<br><span style=padding-left:20px;></span>"format_version": 1,
-<br><span style=padding-left:20px;>"header": {
-<br><span style=padding-left:40px;>"description": "アニメーション練習パックです。頑張って作ってみましたよん、、＾＾；",
-<br><span style=padding-left:40px;>"name": "プレイヤーアニメーション練習リソパ",
-<br><span style=padding-left:40px;>"uuid": "187cdb20-4e38-4c3b-9803-14dd44f02977",
-<br><span style=padding-left:40px;>"version": [0, 0, 0],
-<br><span style=padding-left:40px;>"min_engine_version": [1, 13, 0]
-<br><span style=padding-left:20px;>},
-<br><span style=padding-left:20px;>"modules": [
-<br><span style=padding-left:40px;>{
-<br><span style=padding-left:60px;>"description": "リソースパックの二次配布しないでね！！＾＾",
-<br><span style=padding-left:60px;>"type": "resources",
-<br><span style=padding-left:60px;>"uuid": "ff958228-b319-431f-9d60-858147415cc8",
-<br><span style=padding-left:60px;>"version": [0, 0, 0]
-<br><span style=padding-left:40px;>}
-<br><span style=padding-left:20px;>]
+<br><span style=padding-left:20px;></span>"format_version": 1,</span>
+<br><span style=padding-left:20px;>"header": {</span>
+<br><span style=padding-left:40px;>"description": "アニメーション練習パックです。頑張って作ってみましたよん、、＾＾；",</span>
+<br><span style=padding-left:40px;>"name": "プレイヤーアニメーション練習リソパ",</span>
+<br><span style=padding-left:40px;>"uuid": "187cdb20-4e38-4c3b-9803-14dd44f02977",</span>
+<br><span style=padding-left:40px;>"version": [0, 0, 0],</span>
+<br><span style=padding-left:40px;>"min_engine_version": [1, 13, 0]</span>
+<br><span style=padding-left:20px;>},</span>
+<br><span style=padding-left:20px;>"modules": [</span>
+<br><span style=padding-left:40px;>{</span>
+<br><span style=padding-left:60px;>"description": "リソースパックの二次配布しないでね！！＾＾",</span>
+<br><span style=padding-left:60px;>"type": "resources",</span>
+<br><span style=padding-left:60px;>"uuid": "ff958228-b319-431f-9d60-858147415cc8",</span>
+<br><span style=padding-left:60px;>"version": [0, 0, 0]</span>
+<br><span style=padding-left:40px;>}</span>
+<br><span style=padding-left:20px;>]</span>
 <br>}
 </div>
 <br>オブジェクト「description」には、お好みのパックの説明を入力してください。なんか翻訳キーも使えるらしいですよ。例として、「アニメーション練習パックです。頑張って作ってみましたよん、、＾＾；」にしてます。
@@ -77,11 +77,11 @@
 <br>デフォルトは、
 <br><div style=background-color:rgb(78,78,78);color:white;padding-left:20px>
 "animation.player.bob":{
-<br><span style=padding-left:20px;>"loop":true,
-<br><span style=padding-left:20px;>"bones":{
-<br><span style=padding-left:40px;>"leftarm":{"rotation":[0.0,0.0,"-((math.cos(query.life_time*103.13244)*2.865)+2.865)"]},
-<br><span style=padding-left:40px;>"rightarm":{"rotation":[0.0,0.0,"(math.cos(query.life_time*103.13244)*2.865)+2.865"]},
-<br><span style=padding-left:20px;>}
+<br><span style=padding-left:20px;>"loop":true,</span>
+<br><span style=padding-left:20px;>"bones":{</span>
+<br><span style=padding-left:40px;>"leftarm":{"rotation":[0.0,0.0,"-((math.cos(query.life_time*103.13244)*2.865)+2.865)"]},</span>
+<br><span style=padding-left:40px;>"rightarm":{"rotation":[0.0,0.0,"(math.cos(query.life_time*103.13244)*2.865)+2.865"]},</span>
+<br><span style=padding-left:20px;>}</span>
 <br>},
 </div>
 <br>ってなってます。
@@ -155,8 +155,29 @@
 <br>、プレイヤーにのみ使える（と思われるもの）は、
 <br>swim_amount = 泳いでいるかどうか。滑らかに進む。
 <br>bob_animation = 画面の揺れトグルオプションが有効であるかどうか。
-<br>
-    </div>
+<br><br>でアニメーションを実行させるにはコントローラーで指定するなどの作業が必要です。
+<br>コントローラーはanimation_controllersフォルダーの中に入れます。
+<br>ファイル名は「＜エンティティ名とか＞.animation_controller.json」にするべきです。
+<br>正直アニメーションコントローラーに関しては自分も理解しきれてないです。すみません。。。。＾＾；
+<br>面倒だからぶわって書いてしまいますとーーーー
+<br><div style=background-color:rgb(78,78,78);color:white;padding-left:20px>
+    "controller.animation.player.sample":{
+    <br><span style=padding-left:20px;>"initial_state":"default", <span style=color:green;>// defaultの部分はなんでもいいです（覚えやすい奴）。ちなみに、これはでデフォルトのスクリプト立てるみたいな感じです。if文なしで常に最初から実行するような感じ。</span>
+    <br><span style=padding-left:20px;>"states":{</span>
+    <br><span style=padding-left:40px;>"default":{</span>
+    <br><span style=padding-left:60px;>"コントローラー名"<span style=color:green;>// 分かりやすいようにサンプルアニメーションにしてみました。常に実行させる場合。</span></span>
+    <br><span style=padding-left:60px;>{"コントローラー名":"＜条件＞"}<span style=color:green;>// 分かりやすいようにサンプルアニメーションにしてみました。条件はクエリとか変数とか1.0が返されると実行されます。</span></span>
+    <br><span style=padding-left:40px;>}</span>
+    <br><span style=padding-left:20px;>}</span>
+    <br>},
+</div>って思ったんですけど、ちょっと忘れてることがありました。
+<br>コントローラーとアニメーションを結びつけるコードです。
+<br>これないとコントローラーで指定しても意味がありません。
+<br>animation_controllerにanimation.~~~を入力しても、実は意味ないんです。ごめんね。
+<br>entityフォルダを作って、animationsにこういう書き方してください：
+<br><div style=background-color:rgb(78,78,78);color:white;padding-left:20px>"＜コントローラー名＞":"animation.から始まるアニメーション名"</div>
+</div>
+    <code id="json"></code>
     <div id="iroiro" style="padding-top: 120px; font-size:20px; text-align: left;"><span style="color: red;">// --- 記載者 --- //</span>
 <br>記載者：栗君（<a href="https://twitter.com/KuriSan_Fox" style="color: blue;">@KuriSan_Fox</a>）
 <br>作成日：2021/05/06 17:53（UTC +0）

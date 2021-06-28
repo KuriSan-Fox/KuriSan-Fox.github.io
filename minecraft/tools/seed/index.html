@@ -137,7 +137,7 @@
                     }
                 }
 
-                document.write('<button type="button" onclick="reload_page();">メインページに戻る</button><span style="color:blue;"><br><br>--- 説明 ---</span><br>Java Editionのシード値をBedrock Edition専用に変換します。<br><span color=red;>32bit以内のシード値しか変換できません。マイナス記号付きのシード値も変換できません。</span><br>変換されたシード値をJava Editionで入力して、同じ座標にTPして見比べてみてください！<br><br>変換前シード値: ' + old_seed + '<br>変換後シード値：[<span style=color:yellowgreen;>' + new_seed + '</span>]');
+                document.write('<button type="button" onclick="reload_page();">メインページに戻る</button><span style="color:blue;"><br><br>--- 説明 ---</span><br>Java Editionのシード値をBedrock Edition専用に変換します。<br><span color=red;>32bit以内のシード値しか変換できません。マイナス記号付きのシード値も変換できません。</span><br>変換されたシード値をJava Editionで入力して、同じ座標にTPして見比べてみてください！<br><br>変換前シード値：[<span style=color:yellowgreen;>' + old_seed + '</span>] <br>変換後シード値: ' + new_seed);
                 if(old_seed != ''){
                     console.log('変換に成功しました太たたた');
                 }else{

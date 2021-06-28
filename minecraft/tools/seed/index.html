@@ -77,7 +77,7 @@
                     console.log('生成中ですよん！：' + ((counterrr/counterrrmax)*100) + '%');
                     counterrr = counterrr + 1;
                 }
-                document.write('<button type="button" onclick="reload_page();">もう一度作る</button><span style="color:blue;"><br><br>--- 説明 ---</span><br>マイナス数値のシード値は（）の中にJava Edition専用のシード値があります。（）の外にあるマイナス数値はBedrock Edition用で、Java Editionで使っても全く違う地形を生成します。<br>マイナス記号ではない場合、両方そのまま使えます。<br><br><span style=color:red;>' + tsuika_osirase + '</span><br><br>// --- 作ったよ --- // <br>' + generator + '<br><br>/// ----- 数字生成機終了線 ----- ///');
+                document.write('<button type="button" onclick="reload_page();">メインページに戻る</button><span style="color:blue;"><br><br>--- 説明 ---</span><br>マイナス数値のシード値は（）の中にJava Edition専用のシード値があります。（）の外にあるマイナス数値はBedrock Edition用で、Java Editionで使っても全く違う地形を生成します。<br>マイナス記号ではない場合、両方そのまま使えます。<br><br><span style=color:red;>' + tsuika_osirase + '</span><br><br>// --- 作ったよ --- // <br>' + generator + '<br><br>/// ----- 数字生成機終了線 ----- ///');
                 if(generator != ''){
                     console.log('せいせいかんりょー！');
                 }else{
@@ -109,7 +109,7 @@
                     }
                 }
 
-                document.write('<button type="button" onclick="reload_page();">もう一度作る</button><span style="color:blue;"><br><br>--- 説明 ---</span><br>Bedrock Editionのシード値をJava Edition専用に変換します。<br>変換されたシード値をJava Editionで入力して、同じ座標にTPして見比べてみてください！<br><br>変換前シード値: ' + old_seed + '<br>変換後シード値：[<span style=color:yellowgreen;>' + new_seed + '</span>]');
+                document.write('<button type="button" onclick="reload_page();">メインページに戻る</button><span style="color:blue;"><br><br>--- 説明 ---</span><br>Bedrock Editionのシード値をJava Edition専用に変換します。<br>変換されたシード値をJava Editionで入力して、同じ座標にTPして見比べてみてください！<br><br>変換前シード値: ' + old_seed + '<br>変換後シード値：[<span style=color:yellowgreen;>' + new_seed + '</span>]');
                 if(old_seed != ''){
                     console.log('変換に成功しました太たたた');
                 }else{
@@ -137,7 +137,7 @@
                     }
                 }
 
-                document.write('<button type="button" onclick="reload_page();">もう一度作る</button><span style="color:blue;"><br><br>--- 説明 ---</span><br>Java Editionのシード値をBedrock Edition専用に変換します。<br><span color=red;>32bit以内のシード値しか変換できません。マイナス記号付きのシード値も変換できません。</span><br>変換されたシード値をJava Editionで入力して、同じ座標にTPして見比べてみてください！<br><br>変換前シード値: ' + old_seed + '<br>変換後シード値：[<span style=color:yellowgreen;>' + new_seed + '</span>]');
+                document.write('<button type="button" onclick="reload_page();">メインページに戻る</button><span style="color:blue;"><br><br>--- 説明 ---</span><br>Java Editionのシード値をBedrock Edition専用に変換します。<br><span color=red;>32bit以内のシード値しか変換できません。マイナス記号付きのシード値も変換できません。</span><br>変換されたシード値をJava Editionで入力して、同じ座標にTPして見比べてみてください！<br><br>変換前シード値: ' + old_seed + '<br>変換後シード値：[<span style=color:yellowgreen;>' + new_seed + '</span>]');
                 if(old_seed != ''){
                     console.log('変換に成功しました太たたた');
                 }else{

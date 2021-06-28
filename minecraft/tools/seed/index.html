@@ -26,10 +26,14 @@
         <br>（まぁそんな更新来るわけないんですけどね。。）
         <br><br>あとアルファベット -> 数字は対応していません！！！！！！！
         <br>（そのうち対応させたいなと思ってる。）
+        <br><br>あとちなみに変換後も同じ数字だったらそのまま使えるということです。
+        <br>基本的にマイナス記号以外は変わりない。
         <!--以下ほぼJavaScript-->
         <script>
             // --- ベース --- //
             function falco(){
+                // TODO: どこかでこれを使用する。
+                console.log('作った人ラベルを準備しています。。。');
                 let tsukutta_hito = '栗君';
                 let tsukutta_hito_id = 'KuriSan_Fox';
                 let tsukutta_hito_label = '記載者：' + tsukutta_hito + '（<a href="https://twitter.com/#!/' + tsukutta_hito_id + '\">' + tsukutta_hito_id + '）';
@@ -39,6 +43,7 @@
                     console.log('作った人ラベルの作成に成功しました！：');
                     console.log(tsukutta_hito_label);
                 }
+                console.log('多分作った人ラベルの準備に終了しました。これ意味あるんですかね。');
             }
 
             // --- Java EditionとBedrock Edition両方で使えるシード値ジェネレータのfunctionコード --- //
@@ -64,6 +69,8 @@
                     console.log('数字が多すぎたため、65535に設定します。');
                     counterrrmaxb = 65535;
                     tsuika_osirase = '生成個数が多過ぎたため、端末の負担対策で65535に設定されました。';
+                }if(counterrrmax != (Math.round(counterrrmax * 1))){
+                    
                 }else{
                     console.log('生成を開始します。');
                     counterrrmaxb = counterrrmax;
@@ -99,10 +106,10 @@
                 let textbox = document.getElementById("generato_count_be_to_je");
                 let old_seed = textbox.value;
 
-                console.log('シード値変換を開始します。。。。。。。。。。。。。。。。。。。');
+                console.log('シード値変換を開始します。。。');
 
                 //let old_seed = '';
-                if(old_seed<-2147483648){
+                if((old_seed<-2147483648) || ((old_seed * 1) != Math.round(old_seed * 1))){
                         new_seed = 'Bedrock Editionはこの元々シード値を使用できません。';
                         console.log('Bedrock Editionは元々このシード値に対応していないようです。');
                 }else{ // JavaScriptってelseif無いの知りませんでした。
@@ -130,7 +137,7 @@
                 console.log('シード値変換を開始します。。。。。。。。。。。。。。。。。。。');
 
                 //let old_seed = '';
-                if((old_seed<0) || (old_seed > 4294967295)){
+                if((old_seed<0) || (old_seed > 4294967295) || ((old_seed * 1) != Math.round(old_seed * 1))){
                         new_seed = '残念ながらこのシード値はBedrock Edition専用に変換できません。';
                         console.log('残念ながらこのシード値はBedrock Edition専用に変換できません。');
                 }else{ // JavaScriptってelseif無いの知りませんでした。

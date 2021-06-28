@@ -11,25 +11,8 @@
             console.log(notice);
             function kuji() {
                 var variable = Math.random (0,1);
-                var variable = Math.round(variable * 3);
-                switch(variable){
-                    case 0:
-                        notice = ('はハハハハハｗｗｗｗｗｗボタン押したん？ｗｗｗｗｗｗｗｗｗｗｗ - 1');
-                        break;
-                    case 1:
-                        notice = ('はハハハハハｗｗｗｗｗｗボタン押したん？ｗｗｗｗｗｗｗｗｗｗｗ - 2');
-                        break;
-                    case 2:
-                        notice = ('はハハハハハｗｗｗｗｗｗボタン押したん？ｗｗｗｗｗｗｗｗｗｗｗ - 3');
-                        break;
-                    case 3:
-                        notice = ('はハハハハハｗｗｗｗｗｗボタン押したん？ｗｗｗｗｗｗｗｗｗｗｗ - 4');
-                        break;
-                    default:
-                        notice = ('エラー：数値' + variable + 'は無効な値です。0から3である必要がありますが、何らかの原因でそれらが無視されたようです。原因を特定するため、サポーターへご連絡ください。');
-                        break;
-                }
-                document.write('テスト：' + notice);
+                var variable = Math.round(variable * 9007199254740992);
+                document.write(variable);
 
                 //alert(notice);
             }

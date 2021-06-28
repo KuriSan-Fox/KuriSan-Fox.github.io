@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>シード値変換</title>
+        <meta charset="utf-8">       
+    </head>
+    <body>
+        ツールたち<br>現在実験運用中！ - KuriSan_Fox<br>
+        <br><span style=color:blue;>--- Bedrock版とJava版両方使えるシード値 ---</span><br>作成するシード値の個数：<input type="number" id=generato_count_be_je_same><br><button type="button" onclick="bedrock_and_java()">Java版とBedrock版両方使えるシード値作る</button>
+        <br><br><span style=color:blue;>--- Bedrock版のシード値をJava版用に変換する ---</span><br>作成するシード値の個数：<input type="number" id=generato_count_be_to_je><br><button type="button" onclick="bedrock_to_java()">Bedrock版のシード値をJava版用に変換する</button>
+        <br><br><span style=color:blue;>--- Java版のシード値をBedrock版用に変換する ---</span><br>作成するシード値の個数：<input type="number" id=generato_count_je_to_be><br><button type="button" onclick="java_to_bedrock()">Java版のシード値をBedrock版用に変換する</button>
+        <br><br>シード値を変換、およびほぼ同じ地形のシード値を生成するものです。ただし、バイオーム以外は一切共通点が存在しません。<br>sまた、ネザーおよびジ・エンドも一切共通点が存在しないことに注意してください。
+        <br><br>開発者：<a href="https://twitter.com/#!/KuriSan_Fox">KuriSan_Fox（ケモナー／栗君）</a>
+        <br>掲示板：<a href="https://jbbs.shitaraba.net/game/61066/">したらば掲示板 - フォックス★ちゃんねる</a>（匿名バグ報告はココで行ってもOKです）
+        <br>GitHubリポジトリ：<a href="https://github.com/KuriSan-Fox/kurisan-fox.github.io">KuriSan-Fox/kurisan-fox.github.io</a>
+        <script>
+            // --- ベース --- //
+            function falco(){
+                let tsukutta_hito = '栗君';
+                let tsukutta_hito_id = 'KuriSan_Fox';
+                let tsukutta_hito_label = '記載者：' + tsukutta_hito + '（<a href="https://twitter.com/#!/' + tsukutta_hito_id + '\">' + tsukutta_hito_id + '）';
+                if(tsukutta_hito_label == ''){
+                    console.log('作った人ラベルの再作成に失敗しました。');
+                }else{
+                    console.log('作った人ラベルの作成に成功しました！：');
+                    console.log(tsukutta_hito_label);
+                }
+            }
+
+            // --- Java EditionとBedrock Edition両方で使えるシード値ジェネレータのfunctionコード --- //
+            function bedrock_and_java() {
+                falco();
+
+                let counterrr = 0;
+                let textbox = document.getElementById("generato_count_be_je_same")
+                let counterrrmax = textbox.value
+
+                console.log(textbox);
+                console.log(counterrrmax);
+
+                console.log('りんりんせいせいちゅ～～～～～');
+                //let counterrrmax = 128;
+                console.log('生成カウンターは' + counterrrmax + 'なので、' + counterrrmax + '個数値を生成させます。');
+                let generator = '';
+                let generating_num = 0;
+                let counterrrmaxb = 0;
+                let tsuika_osirase = '';
+                let generating_num_data = 0;
+                if(counterrrmax > 65535){
+                    console.log('数字が多すぎたため、65535に設定します。');
+                    counterrrmaxb = 65535;
+                    tsuika_osirase = '生成個数が多過ぎたため、端末の負担対策で65535に設定されました。';
+                }else{
+                    console.log('生成を開始します。');
+                    counterrrmaxb = counterrrmax;
+                }
+                while (counterrr < counterrrmaxb) {
+                    generating_num_data = '';
+                    generating_num = (Math.round((Math.random(0,1)-0.5)*4294967295));
+                    if(generating_num < 0){
+                        generating_num_data = generating_num + 4294967296;
+                    }
+                    generator = generator + '<br>' + (counterrr + 1) + '個目：' + generating_num;
+                    if(generating_num_data != ''){
+                        generator = generator + '（' + generating_num_data + '）';
+                    }
+                    console.log('生成中ですよん！：' + ((counterrr/counterrrmax)*100) + '%');
+                    counterrr = counterrr + 1;
+                }
+                document.write('<button type="button" onclick="reload_page();">もう一度作る</button><span style="color:blue;"><br><br>--- 説明 ---</span><br>マイナス数値のシード値は（）の中にJava Edition専用のシード値があります。（）の外にあるマイナス数値はBedrock Edition用で、Java Editionで使っても全く違う地形を生成します。<br>マイナス記号ではない場合、両方そのまま使えます。<br><br><span style=color:red;>' + tsuika_osirase + '</span><br><br>// --- 作ったよ --- // <br>' + generator + '<br><br>/// ----- 数字生成機終了線 ----- ///');
+                if(generator != ''){
+                    console.log('せいせいかんりょー！');
+                }else{
+                    console.log('JavaScriptが正常に動作していないか、ブラウザかスクリプトが古いです。');
+                }
+            }
+
+            function reload_page(){
+                location.reload();
+            }
+
+            // --- Bedrock Editionのシード値をJava Editionに変換する --- //
+            function bedrock_to_java(){
+                falco();
+                let textbox = document.getElementById("generato_count_be_to_je");
+                let old_seed = textbox.value;
+
+                console.log('シード値変換を開始します。。。。。。。。。。。。。。。。。。。');
+
+                //let old_seed = '';
+                if(old_seed<-2147483648){
+                        new_seed = 'Bedrock Editionはこの元々シード値を使用できません。';
+                        console.log('Bedrock Editionは元々このシード値に対応していないようです。');
+                }else{ // JavaScriptってelseif無いの知りませんでした。
+                    if(old_seed<0){
+                        new_seed = (old_seed * 1) + (4294967296);
+                    }else{
+                        new_seed = old_seed;
+                    }
+                }
+
+                document.write('<button type="button" onclick="reload_page();">もう一度作る</button><span style="color:blue;"><br><br>--- 説明 ---</span><br>Bedrock Editionのシード値をJava Edition専用に変換します。<br>変換されたシード値をJava Editionで入力して、同じ座標にTPして見比べてみてください！<br><br>変換前シード値: ' + old_seed + '<br>変換後シード値：[<span style=color:yellowgreen;>' + new_seed + '</span>]');
+                if(old_seed != ''){
+                    console.log('変換に成功しました太たたた');
+                }else{
+                    console.log('JavaScriptが正常に動作していないか、ブラウザかスクリプトが古いです。');
+                }
+            }
+
+            // --- Java Editionのシード値をBedrock Editionに変換する --- //
+            function java_to_bedrock(){
+                falco();
+                let textbox = document.getElementById("generato_count_je_to_be");
+                let old_seed = textbox.value;
+
+                console.log('シード値変換を開始します。。。。。。。。。。。。。。。。。。。');
+
+                //let old_seed = '';
+                if((old_seed<0) || (old_seed > 4294967295)){
+                        new_seed = '残念ながらこのシード値はBedrock Edition専用に変換できません。';
+                        console.log('残念ながらこのシード値はBedrock Edition専用に変換できません。');
+                }else{ // JavaScriptってelseif無いの知りませんでした。
+                    if(old_seed>2147483647){
+                        new_seed = (old_seed * 1) - (4294967296);
+                    }else{
+                        new_seed = old_seed;
+                    }
+                }
+
+                document.write('<button type="button" onclick="reload_page();">もう一度作る</button><span style="color:blue;"><br><br>--- 説明 ---</span><br>Java Editionのシード値をBedrock Edition専用に変換します。<br><span color=red;>32bit以内のシード値しか変換できません。マイナス記号付きのシード値も変換できません。</span><br>変換されたシード値をJava Editionで入力して、同じ座標にTPして見比べてみてください！<br><br>変換前シード値: ' + old_seed + '<br>変換後シード値：[<span style=color:yellowgreen;>' + new_seed + '</span>]');
+                if(old_seed != ''){
+                    console.log('変換に成功しました太たたた');
+                }else{
+                    console.log('JavaScriptが正常に動作していないか、ブラウザかスクリプトが古いです。');
+                }
+            }
+        </script>
+    </body>
+</html>

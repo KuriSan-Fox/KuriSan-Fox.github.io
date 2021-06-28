@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>譁ｰ譌･蟶ｸ</title>
+        <meta charset="utf-16">
+    </head>
+    <body style="color: red; background-color: black;">
+        <a href="list.html" style="color: blue;">数字</a>
+        <div id="follower_to_nakayoku_shiro" style="font-size: 25px; text-align: center; padding-top: 25px;">数字</div><br><hr>
+        <div id="follower_t0_nakayoku_shiro" style="font-size: 18.4px; text-align: left; padding-left: 400px; padding-top: 50px;"><br>数字ジェネレータを実験で作りました。
+            <div style="padding-top: 1px;">
+                <!--適当糞ごみコードです。コンソールはまともに動いてるか気になるからいちいち教えてます。-->
+                <input type="number" id=generato_count>
+                
+                <button type="button" onclick="kuji()">左側に数字を入力してここをクリックして生成させる</button>
+                <script>
+                    function kuji() {
+                        let textbox = document.getElementById("generato_count")
+                        let counterrrmax = textbox.value
+
+                        console.log(textbox);
+                        console.log(counterrrmax);
+
+                        console.log('りんりんせいせいちゅ～～～～～');
+                        let tsukutta_hito = '栗君';
+                        let tsukutta_hito_id = 'KuriSan_Fox';
+                        let tsukutta_hito_label = '記載者：' + tsukutta_hito + '（<a href="https://twitter.com/#!/' + tsukutta_hito_id + '\">' + tsukutta_hito_id + '）';
+                        if(tsukutta_hito_label == ''){
+                            console.log('作った人ラベルの再作成に失敗しました。');
+                        }else{
+                            console.log('作った人ラベルの作成に成功しました！：');
+                            console.log(tsukutta_hito_label);
+                        }
+                        let counterrr = 0;
+                        //let counterrrmax = 128;
+                        console.log('生成カウンターは' + counterrrmax + 'なので、' + counterrrmax + '個数値を生成させます。');
+                        let generator = '';
+                        let generating_num = 0;
+                        let counterrrmaxb = 0;
+                        let tsuika_osirase = '';
+                        let generating_num_data = 0;
+                        if(counterrrmax > 65535){
+                            console.log('数字が多すぎたため、65535に設定します。');
+                            counterrrmaxb = 65535;
+                            tsuika_osirase = '数字が多すぎたため、65535に設定します。';
+                        }else{
+                            console.log('生成を開始します。');
+                            counterrrmaxb = counterrrmax;
+                        }
+                        while (counterrr < counterrrmaxb) {
+                            generating_num_data = '';
+                            generating_num = (Math.round((Math.random(0,1)-0.5)*4294967295));
+                            if(generating_num < 0){
+                                generating_num_data = generating_num + 4294967295;
+                            }
+                            generator = generator + '<br>' + (counterrr + 1) + '個目：' + generating_num;
+                            if(generating_num_data != ''){
+                                generator = generator + '（' + generating_num_data + '）';
+                            }
+                            console.log('生成中ですよん！：' + ((counterrr/counterrrmax)*100) + '%');
+                            counterrr = counterrr + 1;
+                        }
+                        document.write('// --- 作ったよ --- // <br>' + generator + '<br><br>/// ----- 数字生成機終了線 ----- ///<br><span style=color:red;>' + tsuika_osirase + '</span>');
+                        if(generator != ''){
+                            console.log('せいせいかんりょー！');
+                        }else{
+                            console.log('JavaScriptが正常に動作していないか、ブラウザかスクリプトが古いです。');
+                        }
+                    }
+                </script>
+            </div>
+<br>
+    </div>
+    <div id="iroiro" style="padding-top: 120px; font-size:20px; text-align: left;"><span style="color: red;">// --- 險倩ｼ芽� --- //</span>
+<br>險倩ｼ芽��ｼ壽�怜菅�ｼ�<a href="" style="color: blue;">KuriSan_Fox</a>�ｼ�
+<br>菴懈�先律�ｼ�2021/06/28 22:25 �ｼ�UTC +9�ｼ�
+<br>譖ｴ譁ｰ譌･�ｼ�2021/06/28 22:25 �ｼ�UTC +9�ｼ�<br>
+<br> <span style="color: red;">// --- 譖ｴ譁ｰ蜀�螳ｹ --- //</span><br>
+    </div>
+    </body>
+</html>

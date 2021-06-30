@@ -13,6 +13,7 @@
                 <br><span style=color:blue;>--- Bedrock版とJava版両方使えるシード値 ---</span><br>作成するシード値の個数：<input type="number" id=generato_count_be_je_same><br><button type="button" onclick="bedrock_and_java()">Java版とBedrock版両方使えるシード値作る</button>
                 <br><br><span style=color:blue;>--- Bedrock版のシード値をJava版用に変換する ---</span><br>BE -> JE - 変換するシード値：<input type="number" id=generato_count_be_to_je><br><button type="button" onclick="bedrock_to_java()">Bedrock版のシード値をJava版用に変換する</button>
                 <br><br><span style=color:blue;>--- Java版のシード値をBedrock版用に変換する ---</span><br>JE -> BE - 変換するシード値：<input type="number" id=generato_count_je_to_be><br><button type="button" onclick="java_to_bedrock()">Java版のシード値をBedrock版用に変換する</button>
+                <!-- なぜかスマホで閲覧すると文字がサイズがおかしくなります。 -->
                 <br><br><hr>シード値を変換、およびほぼ同じ地形のシード値を生成するものです。ただし、バイオーム以外は一切共通点が存在しません。<br>sまた、ネザーおよびジ・エンドも一切共通点が存在しないことに注意してください。
                 <br><br>開発者Twitter：<a href="https://twitter.com/#!/KuriSan_Fox">KuriSan_Fox（ケモナー／栗君）</a>
                 <br>開発者YouTube：<a href="https://www.youtube.com/channel/UCs3dqR25iYArURKrtsMvxxQ">ケモナー</a>
@@ -74,10 +75,10 @@
                     let counterrrmaxb = 0;
                     let tsuika_osirase = '';
                     let generating_num_data = 0;
-                    if(counterrrmax > 65535){
-                        console.log('数字が多すぎたため、65535に設定します。');
-                        counterrrmaxb = 65535;
-                        tsuika_osirase = '生成個数が多過ぎたため、端末の負担対策で65535に設定されました。';
+                    if(counterrrmax > 1024){
+                        console.log('数字が多すぎたため、1024に設定します。');
+                        counterrrmaxb = 1024;
+                        tsuika_osirase = '生成個数が多過ぎたため、端末の負担対策で1024に設定されました。';
                     }if(counterrrmax != (Math.round(counterrrmax * 1))){
                         
                     }else{

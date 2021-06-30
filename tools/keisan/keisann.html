@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>計算機</title>
+        <meta charset="utf-8" lang="ja">
+    </head>
+    <body>
+        <div id=body class=body>計算<br><hr>
+            <input type="number" id=siki>
+            <select name="siki2" id=siki2>
+                <option value="+">+</option>
+                <option value="-">-</option>
+                <option value="*">*</option>
+                <option value="/">/</option>
+                <option value="%">%</option>
+            </select>
+            <input type="number" id=siki3> = 
+            <input type=text id=ans><br>
+            <button onclick="yeah();">計算する</button>
+        </div>
+        <script>
+            function yeah(){
+                let siki1 = (document.getElementById("siki").vault * 1);
+                let siki2 = (document.getElementById("siki2"));
+                let siki3 = (document.getElementById("siki3").vault * 1);
+                let ans = 0;
+                console.log(siki2);
+                if(siki2 == '+'){
+                    ans = (siki1 + siki2);
+                }else{
+                    if(siki2 == '-'){
+                        ans = (siki1 - siki2);
+                    }else{
+                        if(siki2 == '*'){
+                            ans = (siki1 * siki2);
+                        }else{
+                            if(siki2 == '/'){
+                                ans = (siki1 / siki2);
+                            }else{
+                                if(siki2 == '%'){
+                                    ans = (siki1 % siki2);
+                                }else{
+                                    ans = 'error';
+                                }
+                            }
+                        }
+                    }
+                }
+                document.write('<div id=body class=body>計算<br><hr>' + siki1 + siki2 + siki3 + ' = <input type=text id=ans value=' + ans + '><br><button onclick="location.reload();">もう一度計算</button></div>');
+            }
+        </script>
+    </body>
+</html>

@@ -5,6 +5,7 @@
         <meta charset="utf-8" lang="ja">
     </head>
     <body>
+        <button type="button" onclick="reload_page();">ページリロード</button> / <a href="index.html">インデックスにする</a> / <a href="../seed/">フォルダー指定にする</a>
         <!-- コード -->
         <p>このページを使用してスクショして投稿などの際は自己責任でお願いします。<br>開発者<a href="https://twitter/!#/KuriSan_Fox/"></a>は一切責任を負いません。<br>トラブルや著作権がどーのこーのも同様です。完全自己責任です。<br>あと他人を巻き込んだり攻撃するみたいなのもやめてください。</p><br>
         <p>作成する文字の文字数を入力してください：</p>
@@ -39,6 +40,9 @@
 // !--- Javaではありません！！！！！！ ---! //
 </textarea>-->
         <script>
+            function reload_page(){
+                location.reload();
+            }
             function abcdefg(){
                 ff();
             }

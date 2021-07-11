@@ -1,31 +1,6 @@
-.normal_txt{
-    font-size:16px;
-    color:black;
-    background-color:white;
-    font-family:monospace;
-}
-.jump_link{
-    color:blue;
-}
-.random0{
-    color:black;
-    font-size:16px;
-}
-.random0_title{
-    color:red;
-    font-size:25px;
-}
-
-a {
-    color:blue;
-}
-
-.deep_bottom {
-    padding-top:500px;
-}
-
-.kotei_image{
-    position: fixed;
-    right:15px;
-    bottom:15px;
-}
+.normal_txt{font-size:16px;color:black;background-color:white;font-family:monospace;}
+.jump_link{color:blue;}
+.random0{color:black;font-size:16px;}
+.random0_title{color:red;font-size:25px;}
+a {color:blue;}
+.deep_bottom {padding-top:500px;}
